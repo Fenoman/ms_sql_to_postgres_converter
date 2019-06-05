@@ -1,4 +1,4 @@
-﻿IF OBJECT_ID('dbo.PG_SQL_Convert_PK') IS NOT NULL
+IF OBJECT_ID('dbo.PG_SQL_Convert_PK') IS NOT NULL
 	DROP FUNCTION dbo.PG_SQL_Convert_PK
 GO
 

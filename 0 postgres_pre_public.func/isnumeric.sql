@@ -10,5 +10,4 @@ BEGIN
   RETURN $1 ~ '^([-]?[0-9]+[.]?[0-9]*(e[-+]\d+)?|[.][0-9]+(e[-+]\d+)?)$';
 END;
 $$
-STRICT
-LANGUAGE plpgsql IMMUTABLE;
+LANGUAGE plpgsql IMMUTABLE STRICT;

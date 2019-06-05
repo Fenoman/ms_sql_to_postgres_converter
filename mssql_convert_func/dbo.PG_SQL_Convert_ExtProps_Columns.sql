@@ -1,4 +1,4 @@
-﻿IF NOT EXISTS (SELECT 1 FROM sys.table_types AS TT WHERE TT.name = 'Exclude_ExtProps')
+IF NOT EXISTS (SELECT 1 FROM sys.table_types AS TT WHERE TT.name = 'Exclude_ExtProps')
 	CREATE TYPE Exclude_ExtProps AS TABLE (name VARCHAR(255))
 GO
 

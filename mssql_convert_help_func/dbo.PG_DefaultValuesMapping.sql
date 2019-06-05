@@ -1,4 +1,4 @@
-﻿IF OBJECT_ID('dbo.PG_DefaultValuesMapping') IS NOT NULL
+IF OBJECT_ID('dbo.PG_DefaultValuesMapping') IS NOT NULL
 	DROP FUNCTION dbo.PG_DefaultValuesMapping
 GO
 

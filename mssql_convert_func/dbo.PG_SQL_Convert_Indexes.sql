@@ -1,4 +1,4 @@
-﻿IF OBJECT_ID('dbo.PG_SQL_Convert_Indexes') IS NOT NULL
+IF OBJECT_ID('dbo.PG_SQL_Convert_Indexes') IS NOT NULL
 	DROP FUNCTION dbo.PG_SQL_Convert_Indexes
 GO
 
@@ -38,6 +38,7 @@ BEGIN
 											AND ic.index_id  = i.index_id
 											------------------------------------
 											AND ic.is_included_column = 0
+											AND (ic.partition_ordinal = 0 OR ic.key_ordinal <> 0)
 											------------------------------------
 										ORDER BY ic.key_ordinal
 										FOR XML path('')
@@ -55,6 +56,7 @@ BEGIN
 													AND ic.index_id  = i.index_id
 													------------------------------------
 													AND ic.is_included_column = 1
+													AND ic.partition_ordinal = 0
 													------------------------------------
 												ORDER BY ic.key_ordinal
 												FOR XML path('')

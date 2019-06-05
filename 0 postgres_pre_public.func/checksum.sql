@@ -11,4 +11,5 @@ $$
 BEGIN
 RETURN ('x'||substr(md5(string),1,8))::bit(32)::int;
 END
-$$LANGUAGE plpgsql;
+$$LANGUAGE plpgsql
+IMMUTABLE STRICT;

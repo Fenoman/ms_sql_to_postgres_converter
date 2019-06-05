@@ -1,6 +1,7 @@
 CREATE OR REPLACE FUNCTION userid()
   RETURNS int
 LANGUAGE plpgsql
+STABLE
 AS $$
 -- =============================================
 -- Author:  e-pavlichenko

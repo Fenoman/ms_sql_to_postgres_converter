@@ -1,4 +1,4 @@
-﻿IF OBJECT_ID('dbo.spWriteStringToFile') IS NOT NULL
+IF OBJECT_ID('dbo.spWriteStringToFile') IS NOT NULL
 	DROP PROCEDURE dbo.spWriteStringToFile
 
 SET QUOTED_IDENTIFIER ON

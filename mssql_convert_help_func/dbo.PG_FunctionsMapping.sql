@@ -1,4 +1,4 @@
-﻿IF OBJECT_ID('dbo.PG_FunctionsMapping') IS NOT NULL
+IF OBJECT_ID('dbo.PG_FunctionsMapping') IS NOT NULL
 	DROP FUNCTION dbo.PG_FunctionsMapping
 GO
 

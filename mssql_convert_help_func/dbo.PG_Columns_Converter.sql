@@ -1,4 +1,4 @@
-﻿IF OBJECT_ID('dbo.PG_Columns_Converter') IS NOT NULL
+IF OBJECT_ID('dbo.PG_Columns_Converter') IS NOT NULL
 	DROP FUNCTION dbo.PG_Columns_Converter
 GO
 

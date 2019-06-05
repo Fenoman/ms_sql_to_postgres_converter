@@ -1,4 +1,4 @@
-﻿IF OBJECT_ID('dbo.PG_ComputedColumns_Convert') IS NOT NULL
+IF OBJECT_ID('dbo.PG_ComputedColumns_Convert') IS NOT NULL
 	DROP FUNCTION dbo.PG_ComputedColumns_Convert
 GO
 
@@ -215,15 +215,15 @@ BEGIN
 							THEN 'OLD.N_Amount IS DISTINCT FROM NEW.N_Amount OR OLD.N_Amount_Duty IS DISTINCT FROM NEW.N_Amount_Duty OR OLD.N_Amount_Peni IS DISTINCT FROM NEW.N_Amount_Peni OR OLD.N_Amount_Debt IS DISTINCT FROM NEW.N_Amount_Debt'
 					END
 
-			WHEN '([B_One]|[B_Two])' 
+			WHEN '([B_House_Meter]|[B_House_Needs])'
 				THEN 
 					CASE 
 						WHEN @B_Trigger_Update = 0
 							----------------------------------------------------------------
-							THEN 'NEW.B_One OR NEW.B_Two'
+							THEN 'NEW.B_House_Meter OR NEW.B_House_Needs'
 							----------------------------------------------------------------
 						WHEN @B_Trigger_Update = 1
-							THEN 'OLD.B_One IS DISTINCT FROM NEW.B_One OR OLD.B_Two IS DISTINCT FROM NEW.B_Two'
+							THEN 'OLD.B_House_Meter IS DISTINCT FROM NEW.B_House_Meter OR OLD.B_House_Needs IS DISTINCT FROM NEW.B_House_Needs'
 					END
 
 			WHEN '([dbo].[CF_FIO_Short]([C_Name1],[C_Name2],[C_Name3]))' 
@@ -385,7 +385,7 @@ BEGIN
 					CASE 
 						WHEN @B_Trigger_Update = 0
 							----------------------------------------------------------------
-							THEN '(((NEW.N_Dt_Period/100)*10000 + (NEW.N_Dt_Period%100) * 100) + 1)::text::timestamp(3) + INTERVAL ''1 month'' - INTERVAL ''1 day'''
+							THEN '(((NEW.N_Dt_Period/100)*10000 + (NEW.N_Dt_Period%100) * 100) + 1)::text::timestamptz + INTERVAL ''1 month'' - INTERVAL ''1 day'''
 							----------------------------------------------------------------
 						WHEN @B_Trigger_Update = 1
 							THEN 'OLD.N_Dt_Period IS DISTINCT FROM NEW.N_Dt_Period'
@@ -396,7 +396,7 @@ BEGIN
 					CASE 
 						WHEN @B_Trigger_Update = 0
 							----------------------------------------------------------------
-							THEN '(((NEW.N_Period/100)*10000 + (NEW.N_Period%100) * 100) + 1)::text::timestamp(3) + INTERVAL ''1 month'' - INTERVAL ''1 day'''
+							THEN '(((NEW.N_Period/100)*10000 + (NEW.N_Period%100) * 100) + 1)::text::timestamptz + INTERVAL ''1 month'' - INTERVAL ''1 day'''
 							----------------------------------------------------------------
 						WHEN @B_Trigger_Update = 1
 							THEN 'OLD.N_Period IS DISTINCT FROM NEW.N_Period'

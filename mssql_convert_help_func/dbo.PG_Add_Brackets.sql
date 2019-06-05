@@ -1,4 +1,4 @@
-﻿IF OBJECT_ID('dbo.PG_Add_Brackets') IS NOT NULL
+IF OBJECT_ID('dbo.PG_Add_Brackets') IS NOT NULL
 	DROP FUNCTION dbo.PG_Add_Brackets
 GO
 

@@ -15,4 +15,4 @@ my $iaddr=inet_aton($inet);
 my $name = gethostbyaddr($iaddr,AF_INET);
 return $name;
 $$
-LANGUAGE plperlu;
+LANGUAGE plperlu STRICT STABLE;

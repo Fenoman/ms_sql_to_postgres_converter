@@ -1,4 +1,4 @@
-﻿IF OBJECT_ID('dbo.PG_CheckConstraints_Convert') IS NOT NULL
+IF OBJECT_ID('dbo.PG_CheckConstraints_Convert') IS NOT NULL
 	DROP FUNCTION dbo.PG_CheckConstraints_Convert
 GO
 

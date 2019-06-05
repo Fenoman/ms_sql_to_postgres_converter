@@ -1,4 +1,4 @@
-﻿IF OBJECT_ID('dbo.PG_SQL_ExpCSV_Order_By') IS NOT NULL
+IF OBJECT_ID('dbo.PG_SQL_ExpCSV_Order_By') IS NOT NULL
 	DROP FUNCTION dbo.PG_SQL_ExpCSV_Order_By
 GO
 

@@ -1,4 +1,4 @@
-﻿IF OBJECT_ID('dbo.PG_SQL_Excluded_Tables_For_ImpExp') IS NOT NULL
+IF OBJECT_ID('dbo.PG_SQL_Excluded_Tables_For_ImpExp') IS NOT NULL
 	DROP FUNCTION dbo.PG_SQL_Excluded_Tables_For_ImpExp
 GO
 

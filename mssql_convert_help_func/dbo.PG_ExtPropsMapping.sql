@@ -1,4 +1,4 @@
-﻿IF OBJECT_ID('dbo.PG_ExtPropsMapping') IS NOT NULL
+IF OBJECT_ID('dbo.PG_ExtPropsMapping') IS NOT NULL
 	DROP FUNCTION dbo.PG_ExtPropsMapping
 GO
 

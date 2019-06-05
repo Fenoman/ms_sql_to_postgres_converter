@@ -1,4 +1,4 @@
-﻿IF OBJECT_ID('dbo.PG_Type_Converter') IS NOT NULL
+IF OBJECT_ID('dbo.PG_Type_Converter') IS NOT NULL
 	DROP FUNCTION dbo.PG_Type_Converter
 GO
 
@@ -40,22 +40,22 @@ BEGIN
 		WHEN 'bit'				THEN 'BOOLEAN'
 		WHEN 'char'				THEN 'CHAR(' + CAST(@max_length AS VARCHAR(5)) + ')'
 		WHEN 'date'				THEN 'DATE'
-		WHEN 'datetime'			THEN 'TIMESTAMP(3)'
-		WHEN 'datetime2'		THEN 'TIMESTAMP(' + CAST(@precision AS VARCHAR(5)) + ')'
-		WHEN 'datetimeoffset'	THEN 'TIMESTAMP(' + CAST(@precision AS VARCHAR(5)) + ') WITH TIME ZONE'
+		WHEN 'datetime'			THEN 'TIMESTAMPTZ'
+		WHEN 'datetime2'		THEN 'TIMESTAMPTZ(' + CAST(@precision AS VARCHAR(5)) + ')'
+		WHEN 'datetimeoffset'	THEN 'TIMESTAMPTZ(' + CAST(@precision AS VARCHAR(5)) + ')'
 		WHEN 'decimal'			THEN 'DECIMAL(' + CAST(@precision AS VARCHAR(5)) + ',' + CAST(@scale AS VARCHAR(5)) + ')'
 		WHEN 'float'			THEN 'DOUBLE PRECISION'
 		WHEN 'image'			THEN 'BYTEA'
 		WHEN 'int'				THEN 'INT'
-		WHEN 'money'			THEN 'MONEY'
+		WHEN 'money'			THEN 'numeric(19,4)'
 		WHEN 'nchar'			THEN 'CHAR(' + CAST(@max_length AS VARCHAR(5)) + ')'
 		WHEN 'ntext'			THEN 'TEXT'
 		WHEN 'numeric'			THEN 'NUMERIC(' + CAST(@precision AS VARCHAR(5)) + ',' + CAST(@scale AS VARCHAR(5)) + ')'
 		WHEN 'nvarchar'			THEN  CASE WHEN @max_length = 8000 OR @max_length = -1 THEN 'TEXT' ELSE 'VARCHAR(' + CAST(@max_length AS VARCHAR(5)) + ')' END
 		WHEN 'real'				THEN 'REAL'
-		WHEN 'smalldatetime'	THEN 'TIMESTAMP(0)'
+		WHEN 'smalldatetime'	THEN 'TIMESTAMPTZ'
 		WHEN 'smallint'			THEN 'SMALLINT'
-		WHEN 'smallmoney'		THEN 'MONEY'
+		WHEN 'smallmoney'		THEN 'numeric(19,4)'
 		WHEN 'text'				THEN 'TEXT'
 		WHEN 'time'				THEN 'TIME(' + CAST(@precision AS VARCHAR(5)) + ')'
 		WHEN 'timestamp'		THEN 'BYTEA'

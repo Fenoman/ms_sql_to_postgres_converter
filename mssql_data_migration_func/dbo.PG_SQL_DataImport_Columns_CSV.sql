@@ -1,4 +1,4 @@
-﻿IF OBJECT_ID('dbo.PG_SQL_DataImport_Columns_CSV') IS NOT NULL
+IF OBJECT_ID('dbo.PG_SQL_DataImport_Columns_CSV') IS NOT NULL
 	DROP FUNCTION dbo.PG_SQL_DataImport_Columns_CSV
 GO
 

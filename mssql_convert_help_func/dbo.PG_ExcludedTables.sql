@@ -1,4 +1,4 @@
-﻿IF OBJECT_ID('dbo.PG_ExcludedTables') IS NOT NULL 
+IF OBJECT_ID('dbo.PG_ExcludedTables') IS NOT NULL 
 	DROP PROCEDURE dbo.PG_ExcludedTables
 GO
 

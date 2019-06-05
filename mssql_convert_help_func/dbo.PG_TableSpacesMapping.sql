@@ -1,4 +1,4 @@
-﻿IF OBJECT_ID('dbo.PG_TableSpacesMapping') IS NOT NULL
+IF OBJECT_ID('dbo.PG_TableSpacesMapping') IS NOT NULL
 	DROP FUNCTION dbo.PG_TableSpacesMapping
 GO
 

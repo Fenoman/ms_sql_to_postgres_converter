@@ -1,4 +1,4 @@
-﻿IF OBJECT_ID('dbo.PG_ExcludedExtProps') IS NOT NULL
+IF OBJECT_ID('dbo.PG_ExcludedExtProps') IS NOT NULL
 	DROP PROCEDURE dbo.PG_ExcludedExtProps
 GO
 

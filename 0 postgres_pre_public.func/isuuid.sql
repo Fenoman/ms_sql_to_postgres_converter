@@ -10,5 +10,4 @@ BEGIN
   RETURN $1 ~ '^([0-9a-fA-F]{8}-{1}[0-9a-fA-F]{4}-{1}[0-9a-fA-F]{4}-{1}[0-9a-fA-F]{4}-{1}[0-9a-fA-F]{12})$';
 END;
 $$
-STRICT
-LANGUAGE plpgsql IMMUTABLE;
+LANGUAGE plpgsql IMMUTABLE STRICT;

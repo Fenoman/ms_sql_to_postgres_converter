@@ -1,4 +1,4 @@
-﻿IF OBJECT_ID('dbo.PG_Replace_Pattern') IS NOT NULL
+IF OBJECT_ID('dbo.PG_Replace_Pattern') IS NOT NULL
 	DROP FUNCTION dbo.PG_Replace_Pattern
 GO
 
