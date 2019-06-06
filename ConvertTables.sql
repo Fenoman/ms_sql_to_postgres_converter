@@ -459,7 +459,7 @@ INSERT @Convert_FK_T
 SELECT
 	'ALTER TABLE '	+ const.parent_obj + ' ADD CONSTRAINT ' + const.const_name + ' FOREIGN KEY (' + const.parent_col_csv + ') REFERENCES ' + const.ref_obj + '('
 	+ const.ref_col_csv + ')' + ISNULL(const.delete_action COLLATE Cyrillic_General_CI_AS, '')
-	+ ISNULL(' ' + const.update_action COLLATE Cyrillic_General_CI_AS, '') + ';' + CHAR(10)
+	+ ISNULL(' ' + const.update_action COLLATE Cyrillic_General_CI_AS, '') + ' DEFERRABLE;' + CHAR(10)
 FROM
 	(
 		SELECT
